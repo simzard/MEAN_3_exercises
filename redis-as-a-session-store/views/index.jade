@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    h1 SessionZARD!
+    p Current number of users:
+    if sessions
+        each session, i in sessions
+            ul
+                li
+                    a(href="mailto:#{session.user.email}") #{session.user.name}
+
+        p You current session:
+        p user.name: #{currentSession.user.name}
+        p expires: #{currentSession.cookie.expires}

@@ -1,0 +1,6 @@
+<h1> Add Joke </h1>
+<textarea ng-model='joketext' name='joke' placeholder='Enter joke here'/>
+<button ng-click="ctrl.addJoke()" name='submit', type='submit', value='Submit') Add</button>
+<br>
+<a href='#/jokes'><- Back</a>
+    

@@ -1,0 +1,6 @@
+<h1>Random Joke</h1>
+<br>
+<p>{{joke}} </p>
+<br>
+<a href='/home'><- Back</a>
+

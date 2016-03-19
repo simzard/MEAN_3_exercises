@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    h1 Random Joke
+    br
+    p #{joke.joke}
+    br
+    if joke.reference && joke.reference.author
+        p author: #{joke.reference.author}
+    if joke.type
+        p type: #{joke.type}
+    if joke.reference && joke.reference.link
+        p link:
+            a(href="#{joke.reference.link}")  LINK
+
+    br
+    a(href='/joke') <- Back

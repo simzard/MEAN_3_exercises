@@ -1,0 +1,7 @@
+<h1>All Jokes</h1>
+
+<ul>
+    <li ng-repeat="joke in ctrl.jokes"> {{joke}}</li>
+</ul>
+
+    

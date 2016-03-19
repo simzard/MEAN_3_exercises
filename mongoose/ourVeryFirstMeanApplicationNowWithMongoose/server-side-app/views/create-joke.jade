@@ -1,0 +1,33 @@
+extends layout
+
+block content
+    h1 Add Joke
+    form(action='/storeJoke', method='post')
+        label Joke:
+        br
+        textarea(name='joketext', placeholder='Enter joke here', rows="4" cols="50")
+        br
+        label Type:
+        each jokeType, i in jokeTypes
+            br
+            input(type="checkbox" name="checkboxes[]" value="#{jokeType}")
+            label #{jokeType}
+        br
+        br
+        label Author:
+        input(type="text" name="author" placeholder="Enter author")
+        br
+        br
+        label Link:
+        textarea(name='link', placeholder='Enter link here', rows="4" cols="50")
+        br
+        br
+        button(name='submit', type='submit', value='Submit') Add joke
+
+
+    br
+    a(href='/joke') <- Back
+
+    if result
+        p
+            strong #{result}

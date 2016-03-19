@@ -1,0 +1,15 @@
+<!--<h1> Add Joke </h1>-->
+<form>
+    <label>Joke</label>
+    <textarea ng-model='ctrl.joketext' name='joke' placeholder='Enter joke here'></textarea></br>
+    <label>Type</label>
+    <input type="checkbox" name="type" value="short"> Short<br>
+    <input type="checkbox" name="type" value="riddle" checked> Riddle<br>
+    <input type="checkbox" name="type" value="alcohol" checked> Alcohol<br>
+    <input type="checkbox" name="type" value="blind" checked> Blind<br>
+    <input type="checkbox" name="type" value="quote" checked> Quote<br>
+    <input type="checkbox" name="type" value="joke" checked> Joke<br>
+    <input type="checkbox" name="type" value="foot" checked> Foot<br>
+    <button ng-click="ctrl.addJoke()" name='submit' type='submit' value='Submit'> Add Joke</button>
+</form>
+    

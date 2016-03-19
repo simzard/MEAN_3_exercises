@@ -1,0 +1,46 @@
+extends layout
+
+block content
+    h1 Edit Joke
+    if result
+        p
+            strong #{result}
+    if joke
+        form(action='/editJoke', method='post')
+            label Joke:
+            br
+            textarea(name='joketext', placeholder='Enter joke here', rows="4" cols="50") #{joke.joke}
+            br
+            label Type:
+            each jokeType, i in jokeTypes
+                br
+                // if the joke.type exists in the jokeTypes array then mark it checked
+                if (joke.type.indexOf(jokeType) > -1)
+                        input(type="checkbox" name="checkboxes[]" value="#{jokeType}" checked="checked")
+                    else
+                        input(type="checkbox" name="checkboxes[]" value="#{jokeType}")
+                label #{jokeType}
+            br
+            br
+            label Author:
+            if joke.reference.author
+                input(name='author', type="text" placeholder="Enter author" value="#{joke.reference.author}")
+            else
+                input(name='author', type="text" placeholder="Enter author" value="")
+            br
+            br
+            label Link:
+            br
+            if joke.reference.link
+                textarea(name='link', placeholder='Enter link here', rows="4" cols="50") #{joke.reference.link}
+            else
+                textarea(name='link', placeholder='Enter link here', rows="4" cols="50")
+            br
+            br
+            input(type="hidden", name="jokeid", value="#{joke._id}")
+            button(name='submit', type='submit', value='submit') Update
+
+
+    br
+    a(href='/jokes') <- Back
+

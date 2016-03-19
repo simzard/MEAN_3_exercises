@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    h1 All Jokes
+    if jokes
+        each joke, i in jokes
+            ul
+                if joke.type
+                    li Type:#{joke.type}
+                if joke.reference.author
+                    li Author: #{joke.reference.author}
+                if joke.reference.link
+                    li
+                        a(href="#{joke.reference.link}") LINK
+                li Last Edited: #{joke.lastEdited}
+
+                li
+                    strong #{joke.joke}
+                li
+                    a(href="/deleteJoke/#{joke._id}") Delete
+                    span
+                        a(href="/showJoke/#{joke._id}")                     Edit
+
+
+    a(href='/joke') <- Back
+
+
